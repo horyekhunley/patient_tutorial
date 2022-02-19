@@ -1,7 +1,5 @@
-const express = require('express')
-const { Patient, validate } = require('../models/patient_model.js')
+const { Patient, validate } = require('../models/patient_models');
 
-const router = express.Router();
 //to get all the patients in the database, we use the find method and sort all the entries by their name
 exports.getAllPatients = async (req, res) => {
     const patients = await Patient.find().sort("name");
